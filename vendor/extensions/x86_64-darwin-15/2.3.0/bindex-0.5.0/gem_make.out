@@ -1,0 +1,15 @@
+current directory: /Users/tringo/Documents/Projects/Rails/hemxeo/vendor/gems/bindex-0.5.0/ext/bindex
+/Users/tringo/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20170613-84958-10dw64j.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tringo/Documents/Projects/Rails/hemxeo/vendor/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/tringo/Documents/Projects/Rails/hemxeo/vendor/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/tringo/Documents/Projects/Rails/hemxeo/vendor/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20170613-84958-e91srq/bindex
