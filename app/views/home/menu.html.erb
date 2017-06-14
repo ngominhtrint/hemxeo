@@ -5,3 +5,16 @@
     <%= link_to section.name, menu_path(section_id: section.id), class: "btn #{params[:section_id] == section.id.to_s ? 'btn-primary' : 'btn-secondary'}" %>
   <% end %>
 </div>
+
+<table class="table">
+  <div class="tbody">
+    <% @current_section.food_items.each do |dish| %>
+      <tr>
+        <td> <%= dish.name %> </td>
+        <td> <%= number_to_currency(dish.price) %> </td>
+        <td> <%= image_tag "#{dish.image_url_or_default}" %> </td>
+        <td> <%= link_to "Add to order", new_food_item_order_path(dish) %> </td>
+      </tr>
+    <% end %>
+  </div>
+</table>
