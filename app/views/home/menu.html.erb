@@ -7,11 +7,14 @@
 
   <%= form_tag menu_path, method: "get" do %>
     <% if params[:section_id] %>
-      <% hidden_field_tag 'section_id', params[:section_id] %>
+      <%= hidden_field_tag 'section_id', params[:section_id] %>
     <% end %>
 
-    <%= select_tag "order_by", options_for_select([['A -> Z', 'asc'], ['Z -> A', 'desc'], ['Price asc', 'price_asc'], ['Price desc', 'price_desc']], params[:order_by]), {:prompt => 'Sort by'} %>
+    <%= select_tag "order_by", options_for_select([['A -> Z', 'asc'], ['Z -> A', 'desc'], ['Price asc', 'price_asc'], ['Price desc', 'price_desc']], params[:order_by]), {:prompt => 'Sort by'}%>
     <%= submit_tag "Sort", :name => nil %>
+
+    <%= select_tag "cuisine_id", options_for_select([['Vietnamese', 1], ['Japanese', 2], ['Italian', 3], ['French', 4]], params[:cuisine_id]), {:prompt => 'Cuisine'}%>
+    <%= submit_tag "Filter", :name => nil %>
   <% end %>
 </div>
 
@@ -22,6 +25,8 @@
         <td> <%= dish.name %> </td>
         <td> <%= number_to_currency(dish.price) %> </td>
         <td> <%= image_tag "#{dish.image_url_or_default}" %> </td>
+        <td> <%= dish.cuisine %> </td>
+        <td> <%= link_to "Show detail", food_item_path(dish.id) %> </td>
         <td> <%= link_to "Add to order", new_food_item_order_path(dish) %> </td>
       </tr>
     <% end %>

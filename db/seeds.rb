@@ -15,3 +15,13 @@ if Section.count == 0
 else 
   puts "Section is already created!!"
 end
+
+puts "Running db:seed"
+if Cuisine.count == 0
+  %w(vietnamese japanese italian french).each do |name|
+    puts "Create cuisine with name #{name}"
+    Cuisine.create!(name: name)
+  end
+else 
+  puts "Cuisine is already created!!"
+end

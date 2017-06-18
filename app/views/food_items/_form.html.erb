@@ -36,6 +36,11 @@
     <%= f.text_field :image_url %>
   </div>
 
+  <div class="field">
+    <%= f.label :cuisine_id %>
+    <%= f.select :cuisine_id, Cuisine.all.map{|e| [e.name, e.id]} %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
