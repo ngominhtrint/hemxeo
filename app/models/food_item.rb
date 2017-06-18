@@ -3,6 +3,13 @@ class FoodItem < ApplicationRecord
   belongs_to :cuisine
   validates :name, :price, presence: true
   has_many :orders
+  has_many :reviews
+
+  def increment
+    self.views ||= 0
+    self.views += 1
+    self.save
+  end
 
   def self.search(search)
     where("name ILIKE ?", "%#{search}%")

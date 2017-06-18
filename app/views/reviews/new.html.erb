@@ -1,0 +1,16 @@
+<h1>Review for <%= @item.name %></h1>
+
+<%= form_for [@item, @review] do |f| %>
+<% if @review.errors.present? %>
+  <div class="alert alert-danger"><%= @review.errors.full_messages.to_sentence %> </div>
+<% end %>
+  <div class="form-group">
+
+    <%= f.label :rate %>
+    <%= f.select :rate, [1, 2, 3, 4, 5].map{|e| [e]} %>
+
+    <%= f.label :comment %>
+    <%= f.text_field :comment, class: 'form-control' %>
+  </div>
+  <%= f.submit nil, class: 'btn btn-primary'%>
+<% end %>

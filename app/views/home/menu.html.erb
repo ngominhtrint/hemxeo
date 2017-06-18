@@ -26,6 +26,7 @@
         <td> <%= number_to_currency(dish.price) %> </td>
         <td> <%= image_tag "#{dish.image_url_or_default}" %> </td>
         <td> <%= dish.cuisine %> </td>
+        <td> <%= dish.views %> </td>
         <td> <%= link_to "Show detail", food_item_path(dish.id) %> </td>
         <td> <%= link_to "Add to order", new_food_item_order_path(dish) %> </td>
       </tr>

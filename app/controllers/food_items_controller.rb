@@ -10,6 +10,10 @@ class FoodItemsController < ApplicationController
   # GET /food_items/1
   # GET /food_items/1.json
   def show
+    @food_item.increment
+
+    size = @food_item.reviews.count
+    @avg_rating = @food_item.reviews.map { |x| x["rate"].to_f }.reduce(:+)/size
   end
 
   # GET /food_items/new

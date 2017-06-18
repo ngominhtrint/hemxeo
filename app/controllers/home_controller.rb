@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    
+    @food_items.increment
   end
 
   def contact_us
