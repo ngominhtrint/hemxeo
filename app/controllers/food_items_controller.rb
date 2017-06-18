@@ -13,7 +13,9 @@ class FoodItemsController < ApplicationController
     @food_item.increment
 
     size = @food_item.reviews.count
-    @avg_rating = @food_item.reviews.map { |x| x["rate"].to_f }.reduce(:+)/size
+    if size > 0
+      @avg_rating = @food_item.reviews.map { |x| x["rate"].to_f }.reduce(:+)/size
+    end
   end
 
   # GET /food_items/new

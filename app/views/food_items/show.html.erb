@@ -1,44 +1,38 @@
-<p id="notice"><%= notice %></p>
+<main>
+    <div class="container">
+        <div class="row">
+            <div>
+                <div>
+                    <h1 class="h1-responsive"> <%= @food_item.name %></h1>
+                    <h5>Cuisine <%= @food_item.cuisine %>, <%= @food_item.views %> views</h5>
+                    <h5>Price <%= @food_item.price %>, Section <%= @food_item.section %></h5>
+                    <br>
+                    <div class="view overlay hm-white-light z-depth-1-half">
+                        <img src="<%= @food_item.image_url_or_default %>" class="img-fluid " alt="">
+                        <div class="mask">
+                        </div>
+                    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food_item.name %>
-</p>
+                    <br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @food_item.description %>
-</p>
+                    <p><%= @food_item.description %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @food_item.price %>
-</p>
+                    <div>
+                      <%= link_to 'Review', new_food_item_review_path(@food_item), class: 'btn btn-success' %>
+                      <%= link_to 'Back', menu_path(section_id: @food_item.section.id), class: 'btn btn-primary' %>
+                    </div>
+                    </br></br>
+                    <hr>
+                    <div class="form-group">
+                      <strong>Rating Average:</strong><%= @avg_rating%>
+                      </br>
+                    </div>
 
-<p>
-  <strong>Section:</strong>
-  <%= @food_item.section %>
-</p>
-
-<p>
-  <strong>Cuisine:</strong>
-  <%= @food_item.cuisine %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag "#{@food_item.image_url_or_default}" %>
-</p>
-
-<%= link_to 'Edit', edit_food_item_path(@food_item) %> |
-<%= link_to 'Review', new_food_item_review_path(@food_item) %> |
-<%= link_to 'Back', menu_path(section_id: @food_item.section.id) %>
-
-<p>
-  <strong>Rating Average:</strong><%= @avg_rating%>
-  </br>
-  </br>
-  <strong>Reviews:</strong>
-  </br>
-    <%= render @food_item.reviews %>
-</p>
+                    </br>
+                       <%= render @food_item.reviews %>
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

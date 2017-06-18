@@ -4,9 +4,9 @@
 
 Submitted by: **Tri Ngo Minh**
 
-Time spent: **XX** hours spent in total
+Time spent: **20** hours spent in total
 
-URL: **heroku-app-url**
+URL: **https://hemxeo.herokuapp.com/**
 
 ## User Stories
 
